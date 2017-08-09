@@ -1,0 +1,584 @@
+@charset "utf-8";
+$topheight:36px;
+$headerheight:100px;
+$maincolor:#f60;
+.margin {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 374449 */
+  src: url('//at.alicdn.com/t/font_azjj00aeq0jjdcxr.eot');
+  src: url('//at.alicdn.com/t/font_azjj00aeq0jjdcxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_azjj00aeq0jjdcxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_azjj00aeq0jjdcxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_azjj00aeq0jjdcxr.svg#iconfont') format('svg');
+}
+#top {
+    background: #eee;
+    height: $topheight;
+    .margin {
+        .left {
+            text-align: center;
+            float: left;
+            a:hover {
+                color: #f60;
+            }
+            .left-nav:hover .nav-box {
+                display: block;
+            }
+            .left-nav:hover .nav-a {
+                background: #fff;
+                border: 0;
+                //因为hover的时候没有边框，所以正常情况下也不能有边框
+            }
+            .left-nav {
+                position: relative;
+                float: left;
+                .nav-a {
+                    font: 14px/36px "";
+                    position: relative;
+                    z-index: 2;
+                    display: inline-block;
+                    width: 100px;
+                }
+                .nav-box {
+                    text-align: left;
+                    width: 1000px;
+                    padding: 20px 0;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: 3;
+                    left: -1px;
+                    top: 35px;
+                    border: 1px solid #ddd;
+                    display: none;
+                    background: #fff;
+                    dl.rnb {
+                        border: 0;
+                    }
+                    dl {
+                        float: left;
+                        width: 176px;
+                        border-right: 1px solid #eee;
+                        padding-left: 20px;
+                        dt {
+                            font: 16px/30px "";
+                        }
+                        dd {
+                            width: 100%;
+                            overflow: hidden;
+                            p {
+                                float: left;
+                                width: 78px;
+                                height: 25px;
+                                line-height: 25px;
+                                a {
+                                    display: inline-block;
+                                    .hot {
+                                        display: inline-block;
+                                        width: 15px;
+                                        height: 15px;
+                                        background: url(../images/newbg.png) no-repeat -93px 0;
+                                    }
+                                }
+                                a:hover {
+                                    color: #F60;
+                                }
+                            }
+                        }
+                    }
+                }
+                //以上网站导航列表
+            }
+            .left-partner:hover .partner-box {
+                display: block;
+            }
+            .left-partner:hover .partner-a {
+                background: #fff;
+                border: 0;
+                //因为hover的时候没有边框，所以正常情况下也不能有边框
+            }
+            .left-partner {
+                position: relative;
+                float: left;
+                .partner-a {
+                    font: 14px/36px "";
+                    position: relative;
+                    z-index: 8;
+                    display: inline-block;
+                    width: 100px;
+                }
+                .partner-box {
+                    text-align: left;
+                    width: 176px;
+                    padding: 20px 0 20px 20px;
+                    overflow: hidden;
+                    position: absolute;
+                    left: -1px;
+                    top: 35px;
+                    z-index: 99;
+                    border: 1px solid #ddd;
+                    display: none;
+                    background: #fff;
+                    a {
+                        float: left;
+                        width: 78px;
+                        height: 25px;
+                        line-height: 25px;
+                    }
+                }
+            }
+        }
+        .right {
+            float: right;
+            width: 600px;
+            a {
+                float: left;
+                font: 14px/36px "";
+                position: relative;
+                z-index: 2;
+                display: inline-block;
+                text-align: center;
+                padding: 0 10px;
+                &:hover {
+                    color: #f60;
+                }
+            }
+            .ab {
+                color: #f60;
+                .iconfont{
+                    width:20px;
+                    font: 14px/36px "";
+                }
+            }
+        }
+    }
+}
+
+#header {
+    background: #fff;
+    height: 110px;
+    .header-l {
+        float: left;
+        img {
+            width: 190px;
+            height: 90px;
+        }
+    }
+    .header-m {
+        margin: 20px 0 0 100px;
+        float: left;
+        width: 540px;
+        .search-t {
+            height: 40px;
+            box-sizing: border-box;
+            border: 2px solid #f60;
+            display: flex;
+            input {
+                border: 0;
+            }
+            .iconfont {
+                flex: .2;
+                text-align: center;
+                line-height: 36px;
+            }
+            #txt {
+                flex: 4;
+                font-size: 16px;
+            }
+            #btn {
+                background: #f60;
+                flex: 1;
+                color: #fff;
+                font: 700 18px/36px "";
+                cursor: pointer;
+                &:hover {
+                    background: #f50;
+                }
+            }
+        }
+        .search-b {
+            font: 11px/30px "";
+            a:hover {
+                color: #f60;
+            }
+        }
+    }
+    .header-r {
+        float: right;
+        margin-top: 8px;
+        border: 1px solid #eee;
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
+
+#nav {
+    height: 38px;
+    background: #fff;
+    border-bottom: 2px solid #000;
+}
+
+#nav .nav-l {
+    position: relative;
+    height: 38px;
+    float: left;
+    &:hover .nav-l-list {
+        display: block;
+    }
+}
+
+#nav .nav-l a.box {
+    display: block;
+    width: 190px;
+    height: 100%;
+    background: #ff9900;
+    float: left;
+    font: bold 12px/38px "";
+}
+
+#nav .nav-l .nav-l-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 13px;
+    margin-left: 12px;
+    background: url(../images/nav-list-icon.png);
+}
+
+#nav .nav-l span {
+    width: 78px;
+    color: #fff;
+}
+
+#nav .nav-l .nav-l-list {
+    height: 440px;
+    width: 190px;
+    position: absolute;
+    left: 0;
+    top: 38px;
+    display: none;
+}
+
+#nav .nav-l .nav-l-list ul {
+    height: 100%;
+    width: 100%;
+    background: #222037;
+    z-index: 10;
+    position: relative;
+}
+
+#nav .nav-l .nav-l-list ul li {
+    height: 31px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#nav .nav-l .nav-l-list ul li i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 13px;
+    background: url(../images/nav-list-icon.png);
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i1 {
+    background-position: 0 -13px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i2 {
+    background-position: 0 -26px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i3 {
+    background-position: 0 -39px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i4 {
+    background-position: 0 -42px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i5 {
+    background-position: 0 -65px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i6 {
+    background-position: 0 -78px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i7 {
+    background-position: 0 -91px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i8 {
+    background-position: 0 -104px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i9 {
+    background-position: 0 -117px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i10 {
+    background-position: 0 -130px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i11 {
+    background-position: 0 -143px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i12 {
+    background-position: 0 -156px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i13 {
+    background-position: 0 -169px;
+}
+
+#nav .nav-l .nav-l-list ul li i.nav-l-list-i14 {
+    background-position: 0 -182px;
+}
+
+#nav .nav-l .nav-l-list ul li a {
+    color: #fff;
+    font: 11px/32px "";
+}
+
+#nav .nav-l .nav-l-list .nav-l-list-high {
+    height: 32px;
+}
+
+#nav nav-l span {
+    width: 78px;
+    height: 12px;
+    font: 12px/38px "";
+    color: #fff;
+}
+
+#nav .nav-m {
+    width: 795px;
+    height: 100%;
+    float: left;
+    margin-left: 10px;
+}
+
+#nav .nav-m .nav-m-item {
+    height: 100%;
+}
+
+#nav .nav-m .nav-m-item li {
+    height: 100%;
+    width: auto;
+    padding: 0 12px;
+    float: left;
+    font: bold 13px/38px "";
+}
+
+#nav .nav-r {
+    width: 170px;
+    height: 100%;
+    float: right;
+}
+
+//rec
+.rec {
+    height: 120px;
+    position: relative;
+    margin: 0 auto 15px;
+    border-bottom: 2px solid #F7F7F7;
+    .rec-pic {
+        float: left;
+        position: relative;
+        width: 50px;
+        height: 53px;
+        margin-right: 10px;
+        background: url(../images/pic.png) no-repeat 0 0;
+    }
+    ul.rec-products {
+        display: flex;
+        padding: 20px 0;
+        width: 1130px;
+        height: 120px;
+        float: left;
+        overflow: hidden;
+        li {
+            margin-right: 20px;
+            width: 200px;
+            height: 120px;
+            img {
+                float: left;
+                width: 80px;
+                height: 80px;
+            }
+            div {
+                float: right;
+                width: 120px;
+                a {
+                    display: block;
+                    cursor: pointer;
+                    &:hover {
+                        text-decoration: underline;
+                        color: $maincolor;
+                    }
+                }
+                .price-tag {
+                    font-size: 16px;
+                    color: $maincolor;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+//END
+.end {
+    position: relative;
+    width: 112px;
+    height: 22px;
+    text-align: center;
+    color: #CCC;
+    margin: 15px auto;
+    font: 18px/22px "";
+    span {
+        position: absolute;
+        top: 11px;
+        width: 97px;
+        height: 1px;
+        background: #CCC;
+    }
+    .left {
+        left: -97px;
+    }
+    .right {
+        right: -97px;
+    }
+}
+
+//footer-pre
+.ng-ser-box {
+    background: #f5f5f5;
+    height: 280px;
+    .ng-ser-box-con {
+        border-top: 1px solid #e7e7e7;
+        .ng-promise {
+            display: flex;
+            padding: 12px 0;
+            height: 73px;
+            border-bottom: 1px solid #eaeaea;
+            justify-content: space-between;
+            dl {
+                width: 240px;
+                overflow: hidden;
+                dt {
+                    float: left;
+                    width: 48px;
+                    height: 48px;
+                    margin-right: 8px;
+                }
+                dd {
+                    float: left;
+                    height: 48px;
+                    width: 140px;
+                    p {
+                        line-height: 24px;
+                        width: 100%;
+                        color: #545454;
+                        a {
+                            &:hover {
+                                color: $maincolor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ng-help-box {
+            float: left;
+            display: flex;
+            justify-content: space-between;
+            width: 1000px;
+            height: 180px;
+            dl {
+                margin-left: 20px;
+                height: 160px;
+                width: 200px;
+                dt {
+                    width: 100%;
+                    line-height: 40px;
+                    font-weight: 700;
+                    color: #545454;
+                    height: 35px;
+                    font-size: 14px;
+                    overflow: hidden;
+                }
+                dd {
+                    width: 100%;
+                    line-height: 22px;
+                    a {
+                        &:hover {
+                            color: $maincolor;
+                        }
+                    }
+                }
+            }
+        }
+        .ng-app-down {
+            float: left;
+            height: 180px;
+            width: 90px;
+            p {
+                width: 100%;
+                line-height: 40px;
+                font-weight: 700;
+                color: #545454;
+                height: 35px;
+                font-size: 14px;
+                margin-bottom: 5px;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+//以下footer
+.footer {
+    color: #666666;
+    font: 12px/25px "";
+    padding-top: 15px;
+    text-align: center;
+    .ng-url-list,
+    .ng-copyright,
+    .ng-authentication {
+        margin: 0 auto;
+        width: 990px;
+        height: 25px;
+    }
+    .ng-authentication {
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #f60;
+    }
+    span {
+        padding: 0 5px;
+    }
+}
