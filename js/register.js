@@ -63,7 +63,6 @@ $(function(){
 			     	
 			     }else if(data.error=="1"){
 			     	alert("用户名已存在");
-			     	//console.log(num);
 			     }
 			   }
 			});
