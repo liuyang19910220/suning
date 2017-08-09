@@ -21,7 +21,6 @@ $(function() {
 					} else if(data.error == 1) {
 						$(".tips").html("用户名或密码错误").show();
 					}
-
 				}
 			});
 
