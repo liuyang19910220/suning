@@ -7,6 +7,7 @@ $(function() {
 			$(".tips").html("请输入用户名").show();
 		} else if(!psd) {
 			$(".tips").html("请输入密码").show();
+			//有值才能ajax请求
 		} else {
 			$.ajax({
 				type: "POST",
