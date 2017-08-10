@@ -71,16 +71,17 @@ $(function() {
 						var str = JSON.stringify(obj);
 						setCookie("cart", str, 365);
 						//计算所有选择商品总件数numAll
-						var numAll = 0;
+						showAll();
 						//计算总价格
-						var totalAll = 0;
-						for(var i in obj) {
-							numAll += obj[i]; //{10001: 7, 10003: 9, 10005: 6}
-							//单品数量obj[i]*单价(data[i].price).replace("￥", "")
-							totalAll += obj[i] * ((data[i].price).replace("￥", ""));
-						}
-						$(".cart-footer .numAll").html(numAll);
-						$(".cart-footer .totalAll").html("￥" + totalAll);
+//						var numAll = 0;
+//						var totalAll = 0;
+//						for(var i in obj) {
+//							numAll += obj[i]; //{10001: 7, 10003: 9, 10005: 6}
+//							//单品数量obj[i]*单价(data[i].price).replace("￥", "")
+//							totalAll += obj[i] * ((data[i].price).replace("￥", ""));
+//						}
+//						$(".cart-footer .numAll").html(numAll);
+//						$(".cart-footer .totalAll").html("￥" + totalAll);
 					}
 				})
 
@@ -112,17 +113,19 @@ $(function() {
 						//转化成str存入
 						var str = JSON.stringify(obj);
 						setCookie("cart", str, 365);
-						//计算所有选择商品总件数numAll
-						var numAll = 0;
-						//计算总价格
-						var totalAll = 0;
-						for(var i in obj) {
-							numAll += obj[i]; //{10001: 7, 10003: 9, 10005: 6}
-							//单品数量obj[i]*单价(data[i].price).replace("￥", "")
-							totalAll += obj[i] * ((data[i].price).replace("￥", ""));
-						}
-						$(".cart-footer .numAll").html(numAll);
-						$(".cart-footer .totalAll").html("￥" + totalAll);
+						//调用函数显示所有选择商品总件数numAll
+						showAll();
+//						//计算总价格
+//						var numAll = 0;
+//						var totalAll = 0;
+//						for(var i in obj) {
+//							numAll += obj[i]; //{10001: 7, 10003: 9, 10005: 6}
+//							//单品数量obj[i]*单价(data[i].price).replace("￥", "")
+//							totalAll += obj[i] * ((data[i].price).replace("￥", ""));
+//						}
+//						$(".cart-footer .numAll").html(numAll);
+//						$(".cart-footer .totalAll").html("￥" + totalAll);
+						
 					}
 				})
 
@@ -147,36 +150,58 @@ $(function() {
 					removeCookie("cart");
 				})
 
-				//4-5)自定义输入件数
+				//4-5)input自定义输入件数
 				$(".cart-content input").change(function() {
 					var num = $(this).val();
 					var str = getCookie("cart"); //{10001: 7, 10003: 9, 10005: 6}
-					console.log(str, typeof str);
 					var perPrice = ($(this).parent().siblings(".price").html()).replace("￥", "");
 
 					if(str) {
 						var obj = JSON.parse(str);
-						//console.log(obj,typeof obj);
 						var proId = $(this).prev(".reduce").attr("data-id");
-						//console.log(attr)
 						obj[proId] = Number(num);
 						var str = JSON.stringify(obj);
 						setCookie("cart", str, 30);
+//						console.log(obj, str);
 						$(this).parent().siblings(".total").html("￥" + num * perPrice);
 						//改变总件数，总价格
-						for(var i in obj) {
-							numAll += obj[i]; //{10001: 7, 10003: 9, 10005: 6}
-							//单品数量obj[i]*单价(data[i].price).replace("￥", "")
-							totalAll += obj[i] * ((data[i].price).replace("￥", ""));
-						}
-						$(".cart-footer .numAll").html(numAll);
-						$(".cart-footer .totalAll").html("￥" + totalAll);
-
+						showAll();
 					}
 
 				})
 
-				//4-6)单条勾选，全选
+				//4-6)	单选框，全选
+				$(".selectAll").click(function(){
+					
+				})
+
+
+
+
+
+
+
+
+				//封装一个函数专门用于读取cookie，统计并且显示总价，总件数
+				function showAll() {
+					var str = getCookie("cart"); //{10001: 7, 10003: 9, 10005: 6}
+					var obj = JSON.parse(str);
+					//进入for循环之前，先清零，不然会累加
+					var numAll = 0;
+					var totalAll = 0;
+					for(var i in obj) {
+						numAll += obj[i]; //{10001: 7, 10003: 9, 10005: 6}
+						//单品数量obj[i]*单价(data[i].price).replace("￥", "")
+						totalAll += obj[i] * ((data[i].price).replace("￥", ""));
+					}
+					$(".cart-footer .numAll").html(numAll);
+					$(".cart-footer .totalAll").html("￥" + totalAll);
+
+
+
+
+
+				}
 
 			}
 		}
