@@ -171,8 +171,13 @@ $(function() {
 				})
 
 				//4-6)	单选框，全选
-				$(".selectAll").click(function(){
-					
+				var flag=false;
+				$(".selectItem").click(function(){
+					flag=true;
+					if(flag){
+						$(this).css("background",0).parent("li").css("background","pink");
+					}
+				
 				})
 
 
