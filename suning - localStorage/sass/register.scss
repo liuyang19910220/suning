@@ -1,0 +1,118 @@
+@charset "utf-8";
+$headerheight:100px;
+.margin {
+    width: 990px;
+    margin: 0 auto;
+}
+
+.header {
+    height: $headerheight;
+    margin: 0 auto;
+    .logo{
+        background: url(../images/sprite2.png) no-repeat 0 8px;
+        float: left;
+        width: 200px;
+        height: 100%;
+        }
+    span {
+        float: left;
+        font:20px/100px "";
+    }
+    .login{
+        float: right;
+        margin-top: 80px;
+    }
+}
+
+#main {
+    border-top:3px solid #f60 ;
+    background-color: #fff;
+    padding: 55px 0;
+//  position: relative;
+    .registerform {
+        margin: 0 auto;
+        width: 380px;
+        background: #fff;
+        color: #333;
+            .error{
+                margin-top:-30px ;
+                height:30px;
+                color: red;
+                line-height: 30px;
+                padding:0 5px;
+            }
+            .phonenum,
+            .confirmcode,
+            .setpsd{
+                position: relative;
+                width: 378px;
+                height: 38px;
+                border: 1px solid #ccc;
+                line-height: 38px;
+                margin-bottom: 30px;
+                i{
+                    padding:0 5px
+                } 
+                input{
+                    border: 0;
+                }  
+                a{
+                    position: absolute;
+                    right:0;
+                    cursor: pointer;
+                    display: inline-block;
+                    width: 120px;
+                    border:1px solid #eee;
+                    height: 36px;
+                    background: #eee;
+                    text-align: center;
+                    font: 14px/36px "";
+                }   
+                a:hover{
+                    color: #f60;
+                }          
+            }
+            .items{
+                margin: 0 0 40px 0;
+                line-height: 18px;
+            }
+           #submit{
+           display: block;
+           height:40px;
+           font:20px/40px "" ;
+           font-weight:700 ;
+           color: #fff;
+           text-align: center;
+           border-radius: 5px;
+           background-color:#f60 ;
+       }        
+
+        }
+    }        
+            
+
+.footer {
+    color: #666666;
+    font: 12px/25px "";
+    padding-top: 15px;
+    text-align: center;
+    .ng-url-list,
+    .ng-copyright,
+    .ng-authentication {
+        margin: 0 auto;
+        width: 990px;
+        height: 25px;
+    }
+    .ng-authentication {
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #f60;
+    }
+    span {
+        padding: 0 5px;
+    }
+    
+}
